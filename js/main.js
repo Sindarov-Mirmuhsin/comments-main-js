@@ -97,14 +97,15 @@ function renderUsers(user, element) {
 
 
     element.appendChild(newLi);
+    
 
     buttonModal.addEventListener(`click`, (e) => {
-
+      elListPosts.textContent = null;
       let x = e.target.dataset.id
-
       fetch(`https://jsonplaceholder.typicode.com/posts`).then(response => response.json()).then(data => {
 
         data.forEach((posts) => {
+          
           let postsId = posts.userId;
           if (x == postsId) {
             const postsLi = document.createElement("li");
@@ -129,7 +130,7 @@ function renderUsers(user, element) {
             buttonPosts.addEventListener("click", (evn) => {
               elListComents.textContent = "";
               let y = evn.target.dataset.id;
-
+              
               fetch(`https://jsonplaceholder.typicode.com/comments`).then(response => response.json()).then(data => {
                 data.forEach((comments) => {
                   if (y == comments.postId) {
@@ -168,7 +169,7 @@ async function promiseUser() {
   const response = await fetch('https://jsonplaceholder.typicode.com/users');
   const data = await response.json();
   const json = renderUsers(data, elList)
-  console.log(data);
+  
 }
 promiseUser();
 

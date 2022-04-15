@@ -156,8 +156,9 @@ h3{
 
 .user__website{
   position: absolute;
-  left: 300px;
- 
+  left: 340px;
+  text-decoration: none;
+  color: #34699a;
 }
 
 .user__id{
@@ -171,7 +172,7 @@ h3{
 .user__geo{
   position: absolute;
   top: 215px;
-  left: 290px;
+  left: 314px;
   text-decoration: none;
   color: #34699a;
 }

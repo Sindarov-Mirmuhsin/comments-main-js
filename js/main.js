@@ -62,16 +62,16 @@ function renderUsers(user, element) {
     buttonModal.textContent = "Posts";
     companyId.textContent = elem.id;
     companyEmail.textContent = elem.email;
-    companyGeo.textContent = elem.address.geo;
-    companyWebsite.textContent = elem.website;
+    companyGeo.textContent = "geolocation";
+    companyWebsite.textContent = "website";
 
-    companyNumber.setAttribute("href", "tel:elem.phone");
+    companyNumber.setAttribute("href", `tel:${elem.phone}`);
     companyNumber.setAttribute("target", "__blank");
-    companyEmail.setAttribute("href", "mailto:elem.email");
+    companyEmail.setAttribute("href", `mailto:${elem.email}`);
     companyEmail.setAttribute("target", "__blank");
-    companyGeo.setAttribute("href", `https://www.google.com/maps/place/${elem.address.geo.lat}${elem.address.geo.lng}`);
+    companyGeo.setAttribute("href", `https://www.google.com/maps/place/${elem.address.geo.lat},${elem.address.geo.lng}`);
     companyGeo.setAttribute("target", "__blank");
-    companyWebsite.setAttribute("href", "https://www.google.com:elem.website")
+    companyWebsite.setAttribute("href", `mailto:${elem.website}`)
     companyWebsite.setAttribute("target", "__blank");
 
     //appendchilds
